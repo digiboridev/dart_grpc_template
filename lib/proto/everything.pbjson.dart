@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: hello.proto
+//  source: everything.proto
 //
 // @dart = 2.12
 
@@ -56,13 +56,13 @@ const EventSourceResponse$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'event', '3': 2, '4': 1, '5': 9, '10': 'event'},
     {'1': 'time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'time'},
-    {'1': 'data', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.StringValue', '10': 'data'},
+    {'1': 'isLast', '3': 4, '4': 1, '5': 8, '10': 'isLast'},
   ],
 };
 
 /// Descriptor for `EventSourceResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List eventSourceResponseDescriptor = $convert.base64Decode(
     'ChNFdmVudFNvdXJjZVJlc3BvbnNlEg4KAmlkGAEgASgJUgJpZBIUCgVldmVudBgCIAEoCVIFZX'
-    'ZlbnQSLgoEdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBHRpbWUSMAoE'
-    'ZGF0YRgHIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5TdHJpbmdWYWx1ZVIEZGF0YQ==');
+    'ZlbnQSLgoEdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBHRpbWUSFgoG'
+    'aXNMYXN0GAQgASgIUgZpc0xhc3Q=');
 

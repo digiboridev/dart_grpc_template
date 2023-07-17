@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: hello.proto
+//  source: everything.proto
 //
 // @dart = 2.12
 

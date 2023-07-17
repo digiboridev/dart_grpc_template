@@ -1,7 +1,7 @@
 import 'package:grpc/grpc.dart';
+import 'package:grpc_template/proto/everything.pbgrpc.dart';
 import 'package:grpc_template/proto/google/protobuf/empty.pb.dart';
 import 'package:grpc_template/proto/google/protobuf/timestamp.pb.dart';
-import 'package:grpc_template/proto/hello.pbgrpc.dart';
 
 abstract class ServerFactory {
   /// Creates a test gRPC server with the default parameters.

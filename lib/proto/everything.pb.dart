@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: hello.proto
+//  source: everything.proto
 //
 // @dart = 2.12
 
@@ -13,11 +13,10 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'everything.pbenum.dart';
 import 'google/protobuf/timestamp.pb.dart' as $2;
-import 'google/protobuf/wrappers.pb.dart' as $3;
-import 'hello.pbenum.dart';
 
-export 'hello.pbenum.dart';
+export 'everything.pbenum.dart';
 
 class HealthCheckResponse extends $pb.GeneratedMessage {
   factory HealthCheckResponse() => create();
@@ -113,7 +112,7 @@ class EventSourceResponse extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'event')
     ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'time', subBuilder: $2.Timestamp.create)
-    ..aOM<$3.StringValue>(7, _omitFieldNames ? '' : 'data', subBuilder: $3.StringValue.create)
+    ..aOB(4, _omitFieldNames ? '' : 'isLast', protoName: 'isLast')
     ..hasRequiredFields = false
   ;
 
@@ -167,16 +166,14 @@ class EventSourceResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $2.Timestamp ensureTime() => $_ensure(2);
 
-  @$pb.TagNumber(7)
-  $3.StringValue get data => $_getN(3);
-  @$pb.TagNumber(7)
-  set data($3.StringValue v) { setField(7, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasData() => $_has(3);
-  @$pb.TagNumber(7)
-  void clearData() => clearField(7);
-  @$pb.TagNumber(7)
-  $3.StringValue ensureData() => $_ensure(3);
+  @$pb.TagNumber(4)
+  $core.bool get isLast => $_getBF(3);
+  @$pb.TagNumber(4)
+  set isLast($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasIsLast() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIsLast() => clearField(4);
 }
 
 

@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: hello.proto
+//  source: everything.proto
 //
 // @dart = 2.12
 
@@ -15,10 +15,10 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'everything.pb.dart' as $1;
 import 'google/protobuf/empty.pb.dart' as $0;
-import 'hello.pb.dart' as $1;
 
-export 'hello.pb.dart';
+export 'everything.pb.dart';
 
 @$pb.GrpcServiceName('CringeBus')
 class CringeBusClient extends $grpc.Client {

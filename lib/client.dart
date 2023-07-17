@@ -1,6 +1,6 @@
 import 'package:grpc/grpc.dart';
+import 'package:grpc_template/proto/everything.pbgrpc.dart';
 import 'package:grpc_template/proto/google/protobuf/empty.pb.dart';
-import 'package:grpc_template/proto/hello.pbgrpc.dart';
 
 abstract class ClientFactory {
   /// Creates a test gRPC client with the default parameters.
@@ -21,8 +21,6 @@ abstract class ClientFactory {
     var eventSourceRequest = EventSourceRequest()..id = '123';
     var eventSourceResponse = client.eventSource(eventSourceRequest);
     await for (var event in eventSourceResponse) {
-      print(event.hasData());
-      print(event.data.value);
       print('Incoming event fo id: ${event.id}');
       print('Event: ${event.event}');
       print('Time: ${event.time.toDateTime()}');
