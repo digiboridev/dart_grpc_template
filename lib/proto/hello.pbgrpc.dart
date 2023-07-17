@@ -19,61 +19,61 @@ import 'hello.pb.dart' as $0;
 
 export 'hello.pb.dart';
 
-@$pb.GrpcServiceName('Greeter')
-class GreeterClient extends $grpc.Client {
-  static final _$sayHello = $grpc.ClientMethod<$0.HelloRequest, $0.HelloReply>(
-      '/Greeter/SayHello',
-      ($0.HelloRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.HelloReply.fromBuffer(value));
-  static final _$sayHelloStreamReply = $grpc.ClientMethod<$0.HelloRequest, $0.HelloReply>(
-      '/Greeter/SayHelloStreamReply',
-      ($0.HelloRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.HelloReply.fromBuffer(value));
+@$pb.GrpcServiceName('CringeBus')
+class CringeBusClient extends $grpc.Client {
+  static final _$healthCheck = $grpc.ClientMethod<$0.HealthCheckRequest, $0.HealthCheckResponse>(
+      '/CringeBus/healthCheck',
+      ($0.HealthCheckRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.HealthCheckResponse.fromBuffer(value));
+  static final _$eventSource = $grpc.ClientMethod<$0.EventSourceRequest, $0.EventSourceResponse>(
+      '/CringeBus/eventSource',
+      ($0.EventSourceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.EventSourceResponse.fromBuffer(value));
 
-  GreeterClient($grpc.ClientChannel channel,
+  CringeBusClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.HelloReply> sayHello($0.HelloRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$sayHello, request, options: options);
+  $grpc.ResponseFuture<$0.HealthCheckResponse> healthCheck($0.HealthCheckRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$healthCheck, request, options: options);
   }
 
-  $grpc.ResponseStream<$0.HelloReply> sayHelloStreamReply($0.HelloRequest request, {$grpc.CallOptions? options}) {
-    return $createStreamingCall(_$sayHelloStreamReply, $async.Stream.fromIterable([request]), options: options);
+  $grpc.ResponseStream<$0.EventSourceResponse> eventSource($0.EventSourceRequest request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$eventSource, $async.Stream.fromIterable([request]), options: options);
   }
 }
 
-@$pb.GrpcServiceName('Greeter')
-abstract class GreeterServiceBase extends $grpc.Service {
-  $core.String get $name => 'Greeter';
+@$pb.GrpcServiceName('CringeBus')
+abstract class CringeBusServiceBase extends $grpc.Service {
+  $core.String get $name => 'CringeBus';
 
-  GreeterServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.HelloRequest, $0.HelloReply>(
-        'SayHello',
-        sayHello_Pre,
+  CringeBusServiceBase() {
+    $addMethod($grpc.ServiceMethod<$0.HealthCheckRequest, $0.HealthCheckResponse>(
+        'healthCheck',
+        healthCheck_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.HelloRequest.fromBuffer(value),
-        ($0.HelloReply value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.HelloRequest, $0.HelloReply>(
-        'SayHelloStreamReply',
-        sayHelloStreamReply_Pre,
+        ($core.List<$core.int> value) => $0.HealthCheckRequest.fromBuffer(value),
+        ($0.HealthCheckResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EventSourceRequest, $0.EventSourceResponse>(
+        'eventSource',
+        eventSource_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $0.HelloRequest.fromBuffer(value),
-        ($0.HelloReply value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.EventSourceRequest.fromBuffer(value),
+        ($0.EventSourceResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.HelloReply> sayHello_Pre($grpc.ServiceCall call, $async.Future<$0.HelloRequest> request) async {
-    return sayHello(call, await request);
+  $async.Future<$0.HealthCheckResponse> healthCheck_Pre($grpc.ServiceCall call, $async.Future<$0.HealthCheckRequest> request) async {
+    return healthCheck(call, await request);
   }
 
-  $async.Stream<$0.HelloReply> sayHelloStreamReply_Pre($grpc.ServiceCall call, $async.Future<$0.HelloRequest> request) async* {
-    yield* sayHelloStreamReply(call, await request);
+  $async.Stream<$0.EventSourceResponse> eventSource_Pre($grpc.ServiceCall call, $async.Future<$0.EventSourceRequest> request) async* {
+    yield* eventSource(call, await request);
   }
 
-  $async.Future<$0.HelloReply> sayHello($grpc.ServiceCall call, $0.HelloRequest request);
-  $async.Stream<$0.HelloReply> sayHelloStreamReply($grpc.ServiceCall call, $0.HelloRequest request);
+  $async.Future<$0.HealthCheckResponse> healthCheck($grpc.ServiceCall call, $0.HealthCheckRequest request);
+  $async.Stream<$0.EventSourceResponse> eventSource($grpc.ServiceCall call, $0.EventSourceRequest request);
 }

@@ -13,44 +13,63 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use enumAllowingAliasDescriptor instead')
-const EnumAllowingAlias$json = {
-  '1': 'EnumAllowingAlias',
+@$core.Deprecated('Use healthCheckRequestDescriptor instead')
+const HealthCheckRequest$json = {
+  '1': 'HealthCheckRequest',
+};
+
+/// Descriptor for `HealthCheckRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List healthCheckRequestDescriptor = $convert.base64Decode(
+    'ChJIZWFsdGhDaGVja1JlcXVlc3Q=');
+
+@$core.Deprecated('Use healthCheckResponseDescriptor instead')
+const HealthCheckResponse$json = {
+  '1': 'HealthCheckResponse',
   '2': [
-    {'1': 'UNKNOWN', '2': 0},
-    {'1': 'STARTED', '2': 1},
-    {'1': 'RUNNING', '2': 2},
+    {'1': 'status', '3': 1, '4': 1, '5': 14, '6': '.HealthCheckResponse.Status', '10': 'status'},
+  ],
+  '4': [HealthCheckResponse_Status$json],
+};
+
+@$core.Deprecated('Use healthCheckResponseDescriptor instead')
+const HealthCheckResponse_Status$json = {
+  '1': 'Status',
+  '2': [
+    {'1': 'SERVING', '2': 0},
+    {'1': 'NOT_SERVING', '2': 1},
   ],
 };
 
-/// Descriptor for `EnumAllowingAlias`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List enumAllowingAliasDescriptor = $convert.base64Decode(
-    'ChFFbnVtQWxsb3dpbmdBbGlhcxILCgdVTktOT1dOEAASCwoHU1RBUlRFRBABEgsKB1JVTk5JTk'
-    'cQAg==');
+/// Descriptor for `HealthCheckResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List healthCheckResponseDescriptor = $convert.base64Decode(
+    'ChNIZWFsdGhDaGVja1Jlc3BvbnNlEjMKBnN0YXR1cxgBIAEoDjIbLkhlYWx0aENoZWNrUmVzcG'
+    '9uc2UuU3RhdHVzUgZzdGF0dXMiJgoGU3RhdHVzEgsKB1NFUlZJTkcQABIPCgtOT1RfU0VSVklO'
+    'RxAB');
 
-@$core.Deprecated('Use helloRequestDescriptor instead')
-const HelloRequest$json = {
-  '1': 'HelloRequest',
+@$core.Deprecated('Use eventSourceRequestDescriptor instead')
+const EventSourceRequest$json = {
+  '1': 'EventSourceRequest',
   '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
   ],
 };
 
-/// Descriptor for `HelloRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List helloRequestDescriptor = $convert.base64Decode(
-    'CgxIZWxsb1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZQ==');
+/// Descriptor for `EventSourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventSourceRequestDescriptor = $convert.base64Decode(
+    'ChJFdmVudFNvdXJjZVJlcXVlc3QSDgoCaWQYASABKAlSAmlk');
 
-@$core.Deprecated('Use helloReplyDescriptor instead')
-const HelloReply$json = {
-  '1': 'HelloReply',
+@$core.Deprecated('Use eventSourceResponseDescriptor instead')
+const EventSourceResponse$json = {
+  '1': 'EventSourceResponse',
   '2': [
-    {'1': 'message', '3': 1, '4': 1, '5': 9, '10': 'message'},
-    {'1': 'enum_field', '3': 2, '4': 1, '5': 14, '6': '.EnumAllowingAlias', '10': 'enumField'},
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'event', '3': 2, '4': 1, '5': 9, '10': 'event'},
+    {'1': 'time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'time'},
   ],
 };
 
-/// Descriptor for `HelloReply`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List helloReplyDescriptor = $convert.base64Decode(
-    'CgpIZWxsb1JlcGx5EhgKB21lc3NhZ2UYASABKAlSB21lc3NhZ2USMQoKZW51bV9maWVsZBgCIA'
-    'EoDjISLkVudW1BbGxvd2luZ0FsaWFzUgllbnVtRmllbGQ=');
+/// Descriptor for `EventSourceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventSourceResponseDescriptor = $convert.base64Decode(
+    'ChNFdmVudFNvdXJjZVJlc3BvbnNlEg4KAmlkGAEgASgJUgJpZBIUCgVldmVudBgCIAEoCVIFZX'
+    'ZlbnQSLgoEdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBHRpbWU=');
 

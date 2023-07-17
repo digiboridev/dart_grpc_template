@@ -13,21 +13,19 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class EnumAllowingAlias extends $pb.ProtobufEnum {
-  static const EnumAllowingAlias UNKNOWN = EnumAllowingAlias._(0, _omitEnumNames ? '' : 'UNKNOWN');
-  static const EnumAllowingAlias STARTED = EnumAllowingAlias._(1, _omitEnumNames ? '' : 'STARTED');
-  static const EnumAllowingAlias RUNNING = EnumAllowingAlias._(2, _omitEnumNames ? '' : 'RUNNING');
+class HealthCheckResponse_Status extends $pb.ProtobufEnum {
+  static const HealthCheckResponse_Status SERVING = HealthCheckResponse_Status._(0, _omitEnumNames ? '' : 'SERVING');
+  static const HealthCheckResponse_Status NOT_SERVING = HealthCheckResponse_Status._(1, _omitEnumNames ? '' : 'NOT_SERVING');
 
-  static const $core.List<EnumAllowingAlias> values = <EnumAllowingAlias> [
-    UNKNOWN,
-    STARTED,
-    RUNNING,
+  static const $core.List<HealthCheckResponse_Status> values = <HealthCheckResponse_Status> [
+    SERVING,
+    NOT_SERVING,
   ];
 
-  static final $core.Map<$core.int, EnumAllowingAlias> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static EnumAllowingAlias? valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, HealthCheckResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static HealthCheckResponse_Status? valueOf($core.int value) => _byValue[value];
 
-  const EnumAllowingAlias._($core.int v, $core.String n) : super(v, n);
+  const HealthCheckResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
 

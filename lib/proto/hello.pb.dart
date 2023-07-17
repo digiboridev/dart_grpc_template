@@ -13,18 +13,18 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'google/protobuf/timestamp.pb.dart' as $1;
 import 'hello.pbenum.dart';
 
 export 'hello.pbenum.dart';
 
-class HelloRequest extends $pb.GeneratedMessage {
-  factory HelloRequest() => create();
-  HelloRequest._() : super();
-  factory HelloRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory HelloRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class HealthCheckRequest extends $pb.GeneratedMessage {
+  factory HealthCheckRequest() => create();
+  HealthCheckRequest._() : super();
+  factory HealthCheckRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory HealthCheckRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HelloRequest', createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HealthCheckRequest', createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
@@ -32,42 +32,32 @@ class HelloRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  HelloRequest clone() => HelloRequest()..mergeFromMessage(this);
+  HealthCheckRequest clone() => HealthCheckRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  HelloRequest copyWith(void Function(HelloRequest) updates) => super.copyWith((message) => updates(message as HelloRequest)) as HelloRequest;
+  HealthCheckRequest copyWith(void Function(HealthCheckRequest) updates) => super.copyWith((message) => updates(message as HealthCheckRequest)) as HealthCheckRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static HelloRequest create() => HelloRequest._();
-  HelloRequest createEmptyInstance() => create();
-  static $pb.PbList<HelloRequest> createRepeated() => $pb.PbList<HelloRequest>();
+  static HealthCheckRequest create() => HealthCheckRequest._();
+  HealthCheckRequest createEmptyInstance() => create();
+  static $pb.PbList<HealthCheckRequest> createRepeated() => $pb.PbList<HealthCheckRequest>();
   @$core.pragma('dart2js:noInline')
-  static HelloRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HelloRequest>(create);
-  static HelloRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  static HealthCheckRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HealthCheckRequest>(create);
+  static HealthCheckRequest? _defaultInstance;
 }
 
-class HelloReply extends $pb.GeneratedMessage {
-  factory HelloReply() => create();
-  HelloReply._() : super();
-  factory HelloReply.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory HelloReply.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class HealthCheckResponse extends $pb.GeneratedMessage {
+  factory HealthCheckResponse() => create();
+  HealthCheckResponse._() : super();
+  factory HealthCheckResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory HealthCheckResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HelloReply', createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'message')
-    ..e<EnumAllowingAlias>(2, _omitFieldNames ? '' : 'enumField', $pb.PbFieldType.OE, defaultOrMaker: EnumAllowingAlias.UNKNOWN, valueOf: EnumAllowingAlias.valueOf, enumValues: EnumAllowingAlias.values)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HealthCheckResponse', createEmptyInstance: create)
+    ..e<HealthCheckResponse_Status>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: HealthCheckResponse_Status.SERVING, valueOf: HealthCheckResponse_Status.valueOf, enumValues: HealthCheckResponse_Status.values)
     ..hasRequiredFields = false
   ;
 
@@ -75,40 +65,137 @@ class HelloReply extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  HelloReply clone() => HelloReply()..mergeFromMessage(this);
+  HealthCheckResponse clone() => HealthCheckResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  HelloReply copyWith(void Function(HelloReply) updates) => super.copyWith((message) => updates(message as HelloReply)) as HelloReply;
+  HealthCheckResponse copyWith(void Function(HealthCheckResponse) updates) => super.copyWith((message) => updates(message as HealthCheckResponse)) as HealthCheckResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static HelloReply create() => HelloReply._();
-  HelloReply createEmptyInstance() => create();
-  static $pb.PbList<HelloReply> createRepeated() => $pb.PbList<HelloReply>();
+  static HealthCheckResponse create() => HealthCheckResponse._();
+  HealthCheckResponse createEmptyInstance() => create();
+  static $pb.PbList<HealthCheckResponse> createRepeated() => $pb.PbList<HealthCheckResponse>();
   @$core.pragma('dart2js:noInline')
-  static HelloReply getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HelloReply>(create);
-  static HelloReply? _defaultInstance;
+  static HealthCheckResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HealthCheckResponse>(create);
+  static HealthCheckResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get message => $_getSZ(0);
+  HealthCheckResponse_Status get status => $_getN(0);
   @$pb.TagNumber(1)
-  set message($core.String v) { $_setString(0, v); }
+  set status(HealthCheckResponse_Status v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasMessage() => $_has(0);
+  $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
-  void clearMessage() => clearField(1);
+  void clearStatus() => clearField(1);
+}
+
+class EventSourceRequest extends $pb.GeneratedMessage {
+  factory EventSourceRequest() => create();
+  EventSourceRequest._() : super();
+  factory EventSourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EventSourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventSourceRequest', createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  EventSourceRequest clone() => EventSourceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  EventSourceRequest copyWith(void Function(EventSourceRequest) updates) => super.copyWith((message) => updates(message as EventSourceRequest)) as EventSourceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventSourceRequest create() => EventSourceRequest._();
+  EventSourceRequest createEmptyInstance() => create();
+  static $pb.PbList<EventSourceRequest> createRepeated() => $pb.PbList<EventSourceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static EventSourceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EventSourceRequest>(create);
+  static EventSourceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class EventSourceResponse extends $pb.GeneratedMessage {
+  factory EventSourceResponse() => create();
+  EventSourceResponse._() : super();
+  factory EventSourceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EventSourceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventSourceResponse', createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'event')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'time', subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  EventSourceResponse clone() => EventSourceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  EventSourceResponse copyWith(void Function(EventSourceResponse) updates) => super.copyWith((message) => updates(message as EventSourceResponse)) as EventSourceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventSourceResponse create() => EventSourceResponse._();
+  EventSourceResponse createEmptyInstance() => create();
+  static $pb.PbList<EventSourceResponse> createRepeated() => $pb.PbList<EventSourceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static EventSourceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EventSourceResponse>(create);
+  static EventSourceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  EnumAllowingAlias get enumField => $_getN(1);
+  $core.String get event => $_getSZ(1);
   @$pb.TagNumber(2)
-  set enumField(EnumAllowingAlias v) { setField(2, v); }
+  set event($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasEnumField() => $_has(1);
+  $core.bool hasEvent() => $_has(1);
   @$pb.TagNumber(2)
-  void clearEnumField() => clearField(2);
+  void clearEvent() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get time => $_getN(2);
+  @$pb.TagNumber(3)
+  set time($1.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTime() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTime() => clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureTime() => $_ensure(2);
 }
 
 
