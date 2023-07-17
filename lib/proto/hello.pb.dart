@@ -13,42 +13,11 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'google/protobuf/timestamp.pb.dart' as $1;
+import 'google/protobuf/timestamp.pb.dart' as $2;
+import 'google/protobuf/wrappers.pb.dart' as $3;
 import 'hello.pbenum.dart';
 
 export 'hello.pbenum.dart';
-
-class HealthCheckRequest extends $pb.GeneratedMessage {
-  factory HealthCheckRequest() => create();
-  HealthCheckRequest._() : super();
-  factory HealthCheckRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory HealthCheckRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HealthCheckRequest', createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  HealthCheckRequest clone() => HealthCheckRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  HealthCheckRequest copyWith(void Function(HealthCheckRequest) updates) => super.copyWith((message) => updates(message as HealthCheckRequest)) as HealthCheckRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static HealthCheckRequest create() => HealthCheckRequest._();
-  HealthCheckRequest createEmptyInstance() => create();
-  static $pb.PbList<HealthCheckRequest> createRepeated() => $pb.PbList<HealthCheckRequest>();
-  @$core.pragma('dart2js:noInline')
-  static HealthCheckRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HealthCheckRequest>(create);
-  static HealthCheckRequest? _defaultInstance;
-}
 
 class HealthCheckResponse extends $pb.GeneratedMessage {
   factory HealthCheckResponse() => create();
@@ -143,7 +112,8 @@ class EventSourceResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventSourceResponse', createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'event')
-    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'time', subBuilder: $1.Timestamp.create)
+    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'time', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.StringValue>(7, _omitFieldNames ? '' : 'data', subBuilder: $3.StringValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -187,15 +157,26 @@ class EventSourceResponse extends $pb.GeneratedMessage {
   void clearEvent() => clearField(2);
 
   @$pb.TagNumber(3)
-  $1.Timestamp get time => $_getN(2);
+  $2.Timestamp get time => $_getN(2);
   @$pb.TagNumber(3)
-  set time($1.Timestamp v) { setField(3, v); }
+  set time($2.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearTime() => clearField(3);
   @$pb.TagNumber(3)
-  $1.Timestamp ensureTime() => $_ensure(2);
+  $2.Timestamp ensureTime() => $_ensure(2);
+
+  @$pb.TagNumber(7)
+  $3.StringValue get data => $_getN(3);
+  @$pb.TagNumber(7)
+  set data($3.StringValue v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasData() => $_has(3);
+  @$pb.TagNumber(7)
+  void clearData() => clearField(7);
+  @$pb.TagNumber(7)
+  $3.StringValue ensureData() => $_ensure(3);
 }
 
 

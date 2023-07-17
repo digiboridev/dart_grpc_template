@@ -1,13 +1,15 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+// import "google/protobuf/wrappers.proto";
+// import "google/protobuf/struct.proto";
+
 
 
 service CringeBus {
-  rpc healthCheck (HealthCheckRequest) returns (HealthCheckResponse) {}
+  rpc healthCheck (google.protobuf.Empty) returns (HealthCheckResponse) {}
   rpc eventSource (EventSourceRequest) returns (stream EventSourceResponse) {}
 }
-
-message HealthCheckRequest {}
 
 message HealthCheckResponse {
   enum Status {

@@ -1,4 +1,5 @@
 import 'package:grpc/grpc.dart';
+import 'package:grpc_template/proto/google/protobuf/empty.pb.dart';
 import 'package:grpc_template/proto/google/protobuf/timestamp.pb.dart';
 import 'package:grpc_template/proto/hello.pbgrpc.dart';
 
@@ -16,7 +17,7 @@ abstract class ServerFactory {
 
 class CringeBusImpl extends CringeBusServiceBase {
   @override
-  Future<HealthCheckResponse> healthCheck(ServiceCall call, HealthCheckRequest request) async {
+  Future<HealthCheckResponse> healthCheck(ServiceCall call, Empty request) async {
     print('Server: healthCheck');
     print(call.clientMetadata);
     return HealthCheckResponse()..status = HealthCheckResponse_Status.SERVING;

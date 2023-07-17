@@ -13,15 +13,6 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use healthCheckRequestDescriptor instead')
-const HealthCheckRequest$json = {
-  '1': 'HealthCheckRequest',
-};
-
-/// Descriptor for `HealthCheckRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List healthCheckRequestDescriptor = $convert.base64Decode(
-    'ChJIZWFsdGhDaGVja1JlcXVlc3Q=');
-
 @$core.Deprecated('Use healthCheckResponseDescriptor instead')
 const HealthCheckResponse$json = {
   '1': 'HealthCheckResponse',
@@ -65,11 +56,13 @@ const EventSourceResponse$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'event', '3': 2, '4': 1, '5': 9, '10': 'event'},
     {'1': 'time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'time'},
+    {'1': 'data', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.StringValue', '10': 'data'},
   ],
 };
 
 /// Descriptor for `EventSourceResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List eventSourceResponseDescriptor = $convert.base64Decode(
     'ChNFdmVudFNvdXJjZVJlc3BvbnNlEg4KAmlkGAEgASgJUgJpZBIUCgVldmVudBgCIAEoCVIFZX'
-    'ZlbnQSLgoEdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBHRpbWU=');
+    'ZlbnQSLgoEdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBHRpbWUSMAoE'
+    'ZGF0YRgHIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5TdHJpbmdWYWx1ZVIEZGF0YQ==');
 
