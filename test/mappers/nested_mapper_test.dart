@@ -59,6 +59,8 @@ void main() {
       final parentModel = ParentModel();
       parentModel.uuid = '123';
       // parentModel.singleChild = ChildModel();
+      // parentModel.singleChild.a = 'a';
+      // parentModel.singleChild.b = 'b';
 
       expect(() => mapParentEntity(parentModel), throwsException);
     });

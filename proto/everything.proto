@@ -4,7 +4,7 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 
 
-// All known types
+// --- All known types snippet ---
 // import "google/protobuf/any.proto";
 // import "google/protobuf/api.proto";
 // import "google/protobuf/duration.proto";
@@ -15,11 +15,6 @@ import "google/protobuf/empty.proto";
 // import "google/protobuf/timestamp.proto";
 // import "google/protobuf/type.proto";
 // import "google/protobuf/wrappers.proto";
-
-
-
-
-
 
 
 // -- Transport layer examples ---
