@@ -28,5 +28,20 @@ class HealthCheckResponse_Status extends $pb.ProtobufEnum {
   const HealthCheckResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+class TypicalModel_Gender extends $pb.ProtobufEnum {
+  static const TypicalModel_Gender xx = TypicalModel_Gender._(0, _omitEnumNames ? '' : 'xx');
+  static const TypicalModel_Gender xy = TypicalModel_Gender._(1, _omitEnumNames ? '' : 'xy');
+
+  static const $core.List<TypicalModel_Gender> values = <TypicalModel_Gender> [
+    xx,
+    xy,
+  ];
+
+  static final $core.Map<$core.int, TypicalModel_Gender> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static TypicalModel_Gender? valueOf($core.int value) => _byValue[value];
+
+  const TypicalModel_Gender._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

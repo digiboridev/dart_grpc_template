@@ -3,6 +3,7 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 
+
 // All known types
 // import "google/protobuf/any.proto";
 // import "google/protobuf/api.proto";
@@ -16,9 +17,19 @@ import "google/protobuf/empty.proto";
 // import "google/protobuf/wrappers.proto";
 
 
+
+
+
+
+
+// -- Transport layer examples ---
+
 service CringeBus {
   rpc healthCheck (google.protobuf.Empty) returns (HealthCheckResponse) {}
+  rpc queryData (QueryRequest) returns (QueryResponse) {}
   rpc eventSource (EventSourceRequest) returns (stream EventSourceResponse) {}
+  rpc erroredCall (google.protobuf.Empty) returns (google.protobuf.Empty) {}  
+  rpc protectedCall (google.protobuf.Empty) returns (google.protobuf.Empty) {}
 }
 
 message HealthCheckResponse {
@@ -27,6 +38,16 @@ message HealthCheckResponse {
     NOT_SERVING = 1;
   }
   Status status = 1;
+}
+
+message QueryRequest {
+  string id = 1;
+}
+
+message QueryResponse {
+  string id = 1;
+  string name = 2;
+  int32 age = 3;
 }
 
 
@@ -40,3 +61,90 @@ message EventSourceResponse {
   google.protobuf.Timestamp time = 3;
   bool isLast = 4;
 }
+
+
+
+// --- Data definition examples ---
+
+// Common data types example
+message TypicalModel {
+  string name = 1;
+  int32 index = 2;
+  double length = 3;
+  Gender gender = 4;
+  string imageUri = 5;
+  google.protobuf.Timestamp birthDate = 6;
+
+  enum Gender {
+    xx = 0;
+    xy = 1;
+  }
+}
+
+
+// Nested data example
+message ParentModel {
+  string uuid = 1;
+  ChildModel singleChild = 2;
+  repeated ChildModel listChild = 3;
+  map<string, ChildModel> mapChild = 4;
+}
+
+message ChildModel {
+  string a = 1;
+  string b = 2;
+}
+
+
+// Polymorph objects examples
+
+// Baseless polymorph object, 
+// Pros: useful for duck typed languages, with baseless union like: `typedef A | B`
+// Cons: shared fields repeated in all child objects, mapping can't be encapsulated in base object(for strict languages)
+message ClientDataExample {
+  oneof child {
+    PolymorphChildA childA = 1;
+    PolymorphChildB childB = 2;
+  }
+}
+
+message PolymorphChildA {
+  string id = 4;
+  string a = 1;
+}
+
+message PolymorphChildB {
+  string id = 4;
+  int32 b = 1;
+}
+
+
+// Based polymorph object
+// Pros: No shared fields repeated in all child objects, mapping can be encapsulated in base object not in client object
+// Cons: Need to check type and map group of fields separately behind shared fields (not a big deal)
+message ClientDataExample2 {
+  PolymorphBase child  = 1;
+}
+
+message PolymorphBase {
+  string id = 4;
+  oneof child {
+    PolymorphBChildA childA = 1;
+    PolymorphBChildB childB = 2;
+  }
+}
+
+message PolymorphBChildA {
+  string a = 1;
+}
+
+message PolymorphBChildB {
+  int32 b = 1;
+}
+
+
+
+
+
+
+
