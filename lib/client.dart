@@ -1,4 +1,5 @@
 // ignore_for_file: unused_element
+
 import 'package:grpc/grpc.dart';
 import 'package:grpc_template/proto/everything.pbgrpc.dart';
 import 'package:grpc_template/proto/google/protobuf/empty.pb.dart';
@@ -9,11 +10,11 @@ abstract class ClientFactory {
 
   /// Runs the client code to test the server.
   static run() async {
-    // await _healthcheck();
-    // await _queryData();
-    // await _eventSource();
-    // await _erroredCall();
-    // await _protectedCall();
+    await _healthcheck();
+    await _queryData();
+    await _eventSource();
+    await _erroredCall();
+    await _protectedCall();
   }
 
   static _healthcheck() async {
